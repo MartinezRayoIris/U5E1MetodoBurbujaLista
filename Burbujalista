@@ -1,0 +1,75 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package burbujalistas;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author marti
+ */
+public class Burbujalistas {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException {
+       BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+   
+         List <Integer> arre= new ArrayList<Integer>(); 
+        arre.add(5);
+        arre.add(8);
+        arre.add(4);
+        arre.add(9);
+        arre.add(0);
+        arre.add(7);
+        burbuja(arre);
+        System.out.println("Acendente");
+        burbujah(arre); // TODO code application logic here
+    }
+    static void burbuja(List<Integer> arreg)
+    {
+        for(int i = 0; i < arreg.size() - 1; i++)
+        {
+            for(int j = 0; j < arreg.size() - 1; j++)
+            {
+                if (arreg.get(j) < arreg.get(j+1))
+                {
+                    int tmp = arreg.get(j+1);
+                   arreg.set(j+1,arreg.get(j));
+                    arreg.set(j,tmp);
+                }
+            }
+        }
+        for(int i = 0;i < arreg.size(); i++)
+        {
+            System.out.print(arreg.get(i)+"\n");
+        } // TODO code application logic here
+    }
+     static void burbujah(List<Integer> arreg)
+    {
+        int i, j, aux;
+        for (i = 0; i < arreg.size()- 1; i++) {
+            for (j = 0; j < arreg.size() - i - 1; j++) {
+                if (arreg.get(j+1) < arreg.get(j)) {
+                    aux = arreg.get(j+1);
+                    arreg.set(j+1,arreg.get(j));
+                    arreg.set(j,aux);
+                }
+            }
+        }
+        for(int h = 0;h < arreg.size(); h++)
+        {
+            System.out.print(arreg.get(h)+"\n");
+        }
+    }
+
+    
+}
